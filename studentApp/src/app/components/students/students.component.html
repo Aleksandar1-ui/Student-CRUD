@@ -1,0 +1,51 @@
+<form (ngSubmit)="insertData()">
+    <div class="form-group">
+        <label for="ime">Ime</label>
+        <input type="text" name="ime" class="form-control" [(ngModel)]="student.ime">
+    </div>
+    <div class="form-group">
+        <label for="prezime">Prezime</label>
+        <input type="text" name="prezime" class="form-control" [(ngModel)]="student.prezime">
+    </div>
+    <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="text" name="email" class="form-control" [(ngModel)]="student.email">
+    </div>
+    <div class="form-group">
+        <label for="indeks">Indeks</label>
+        <input type="number" name="indeks" class="form-control" [(ngModel)]="student.indeks">
+    </div>
+    <div class="form-group">
+        <label for="prosek">Prosek</label>
+        <input type="number" name="prosek" step="0.01" class="form-control" [(ngModel)]="student.prosek">
+    </div>
+    <button class="btn btn-dark btn-sm mt-4">Vnesi</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Ime</th>
+            <th scope="col">Prezime</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Indeks</th>
+            <th scope="col">Prosek</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let st of students">
+            <th scope="row">{{st.id}}</th>
+            <td>{{st.ime}}</td>
+            <td>{{st.prezime}}</td>
+            <td>{{st.email}}</td>
+            <td>{{st.indeks}}</td>
+            <td>{{st.prosek}}</td>
+            <td>
+                <button class="btn btn-danger btn-sm" (click)="deleteData(st.id)">Izbrishi</button>
+                <button class="btn btn-warning btn-sm mx-2" routerLink="edit/{{st.id}}">Izmeni</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

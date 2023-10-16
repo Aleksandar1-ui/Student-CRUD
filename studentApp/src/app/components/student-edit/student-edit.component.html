@@ -1,0 +1,23 @@
+<form (ngSubmit)="updateStudent()">
+    <div class="form-group">
+        <label for="ime">Ime</label>
+        <input type="text" name="ime" class="form-control" [(ngModel)]="student.ime">
+    </div>
+    <div class="form-group">
+        <label for="prezime">Prezime</label>
+        <input type="text" name="prezime" class="form-control" [(ngModel)]="student.prezime">
+    </div>
+    <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="text" name="email" class="form-control" [(ngModel)]="student.email">
+    </div>
+    <div class="form-group">
+        <label for="indeks">Indeks</label>
+        <input type="number" name="indeks" class="form-control" [(ngModel)]="student.indeks">
+    </div>
+    <div class="form-group">
+        <label for="prosek">Prosek</label>
+        <input type="number" name="prosek" step="0.01" class="form-control" [(ngModel)]="student.prosek">
+    </div>
+    <button class="btn btn-dark btn-sm mt-4">Izmeni</button>
+</form>
